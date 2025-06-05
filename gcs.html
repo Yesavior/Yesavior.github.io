@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿戈探花长沙行 | 沉浸湖湘烟火，溯源星城文脉</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #e74c3c;
+            --secondary: #f39c12;
+            --dark: #2c3e50;
+            --light: #ecf0f1;
+            --accent: #3498db;
+            --green: #27ae60;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f9f9f9 0%, #f1f2f6 100%);
+            color: #333;
+            line-height: 1.6;
+            background-attachment: fixed;
+            padding-bottom: 50px;
+        }
+        
+        .header {
+            background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.95)), url('https://images.unsplash.com/photo-1620207418302-439b387441b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2000&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 80px 20px 60px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .sharing-options {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+        
+        .sharing-options h2 {
+            color: var(--dark);
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .sharing-options h2:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .sharing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .sharing-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+        
+        .sharing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .sharing-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .sharing-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .sharing-card p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+        }
+        
+        .highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: -40px auto 60px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .highlight-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        .highlight-card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .highlight-card h3 {
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .highlight-card p {
+            color: #666;
+            font-size: 1rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            display: inline-block;
+            font-size: 2.2rem;
+            color: var(--dark);
+            padding: 0 20px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-title h2:after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+        
+        .day-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .day-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        }
+        
+        .day-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 25px 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .day-header h3 {
+            font-size: 1.8rem;
+            margin-left: 15px;
+            font-weight: 600;
+        }
+        
+        .day-header i {
+            font-size: 2rem;
+        }
+        
+        .day-content {
+            padding: 30px;
+        }
+        
+        .activity {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #eee;
+            align-items: flex-start;
+        }
+        
+        .activity:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .time-icon {
+            min-width: 60px;
+            height: 60px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.5rem;
+            color: var(--primary);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        
+        .activity-content {
+            flex: 1;
+        }
+        
+        .activity-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .activity-title h4 {
+            font-size: 1.4rem;
+            color: var(--dark);
+            margin-right: 15px;
+        }
+        
+        .tag {
+            background: var(--accent);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .tag.food {
+            background: var(--primary);
+        }
+        
+        .tag.culture {
+            background: var(--green);
+        }
+        
+        .tag.activity {
+            background: var(--secondary);
+        }
+        
+        .activity-details {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        .food-menu {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 15px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .food-menu h5 {
+            margin-bottom: 12px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .food-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .food-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        
+        .food-item i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+        
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer a:hover {
+            color: var(--secondary);
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1.2rem;
+            }
+            
+            .highlight-card {
+                padding: 20px 15px;
+            }
+            
+            .day-content {
+                padding: 20px;
+            }
+            
+            .activity {
+                flex-direction: column;
+            }
+            
+            .time-icon {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+            margin: 0 2px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>阿戈探花·长沙行</h1>
+        <p>沉浸湖湘烟火，溯源星城文脉 | 三日文化漫游</p>
+    </header>
+    
+    <div class="container">
+        <div class="sharing-options">
+            <h2>免费分享方案</h2>
+            <p>以下方法无需服务器即可免费分享此行程页面</p>
+            
+            <div class="sharing-cards">
+                <div class="sharing-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub Pages</h3>
+                    <p>将HTML文件上传到GitHub仓库，通过GitHub Pages免费托管网站</p>
+                    <a href="#" class="btn" id="downloadBtn">下载HTML文件</a>
+                </div>
+                
+                <div class="sharing-card">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                    <h3>Netlify 拖拽部署</h3>
+                    <p>访问 Netlify.com，拖拽HTML文件即可创建免费网站</p>
+                    <a href="https://app.netlify.com/drop" target="_blank" class="btn">前往Netlify</a>
+                </div>
+                
+                <div class="sharing-card">
+                    <i class="fas fa-link"></i>
+                    <h3>临时链接分享</h3>
+                    <p>使用 Replit 或 CodePen 创建项目，生成可分享的临时链接</p>
+                    <a href="https://replit.com/" target="_blank" class="btn">使用Replit</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="highlights">
+            <div class="highlight-card">
+                <i class="fas fa-utensils"></i>
+                <h3>深度体验</h3>
+                <p>从市井早餐到登高怀古，从匠心湘味到养生之道，全方位感受长沙生活美学 🍜⛰️🍵</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fas fa-landmark"></i>
+                <h3>文化浸润</h3>
+                <p>融入革命历史、湘菜文化、市井休闲、茶道垂钓等湖湘特色元素 📖🔥🎣</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fas fa-home"></i>
+                <h3>私享定制</h3>
+                <p>探访朋友私宅、秘密食堂，体验地道长沙人的待客之道 🤝🏡</p>
+            </div>
+            
+            <div class="highlight-card">
+                <i class="fas fa-spa"></i>
+                <h3>舒缓身心</h3>
+                <p>结合传统搓澡、茶道、SPA，平衡探索与放松 🛀💆‍♀️☯️</p>
+            </div>
+        </div>
+        
+        <div class="section-title">
+            <h2>行程详情</h2>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <i class="fas fa-moon"></i>
+                <h3>Day 1：抵达星城，初识烟火 🌃✨</h3>
+            </div>
+            <div class="day-content">
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-train"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>交通</h4>
+                        </div>
+                        <div class="activity-details">
+                            搭乘高铁 G1847 (18:53-20:23) 抵达长沙南站。自行打车前往友人 <strong>阿峰</strong> 的宅邸 🚖
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>晚餐 & 入夜</h4>
+                            <span class="tag food">美食体验</span>
+                        </div>
+                        <div class="activity-details">
+                            在阿峰家享用地道的 <strong>长沙烧烤</strong>，搭配清爽的 <strong>本地啤酒</strong>，小酌怡情 🥂，驱散旅途疲惫，感受长沙热情洋溢的夜宵文化和朋友相聚的温馨 👬。为明日精彩行程养精蓄锐！💤
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <i class="fas fa-sun"></i>
+                <h3>Day 2：登高怀古·寻味匠心·湖湘雅趣 🌄🍽️🎣</h3>
+            </div>
+            <div class="day-content">
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>晨光·唤醒</h4>
+                            <span class="tag food">早餐文化</span>
+                        </div>
+                        <div class="activity-details">
+                            (8:00-9:00) 在 <strong>"山水洲城"长沙的明媚晨光中苏醒</strong> ☀️。体验 <strong>"嗦粉"</strong> 这一最具长沙烟火气的早餐仪式 🍜，或品尝阿峰准备的 <strong>特色大粽子</strong> 🥟，开启充满湖湘滋味的一天！😋
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-bicycle"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>瞻仰·致敬</h4>
+                            <span class="tag culture">红色文化</span>
+                        </div>
+                        <div class="activity-details">
+                            早餐后，活力开启 <strong>户外骑行</strong> 🚴‍♂️，前往 <strong>东方红广场</strong>。瞻仰 <strong>毛泽东青年艺术雕像</strong>，缅怀伟人风采，感悟 <strong>"心忧天下，敢为人先"的湖湘精神 🇨🇳</strong> 与革命先辈的峥嵘岁月 (约30-60分钟) 🫡
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>攀登·寻迹</h4>
+                            <span class="tag culture">历史之旅</span>
+                        </div>
+                        <div class="activity-details">
+                            随即开启 <strong>岳麓山徒步之旅</strong> 🥾。沿山径攀登，不仅呼吸负氧离子 🌳，更是在重走一段历史之路 📜。岳麓山作为长沙文化地标，见证了湖湘文脉的赓续（千年学府岳麓书院 🏯）、近代革命的星火（众多辛亥志士长眠于此）。登顶远眺，"看万山红遍，层林尽染" 🍁，感怀 <strong>"这盛世如您所愿"</strong> 的壮阔情怀 😭❤️ (预计11:30-12:00结束)
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-utensil-spoon"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>午宴·匠心</h4>
+                            <span class="tag food">私房美食</span>
+                        </div>
+                        <div class="activity-details">
+                            前往神秘的 <strong>"星宇大食堂" (秘密食堂)</strong> 🤫。这不仅是一顿午餐，更是 <strong>探访阿峰、阿雍两位朋友创业故事与生活智慧的私享时刻</strong> 💬
+                            <div class="food-menu">
+                                <h5>招牌双选 (品味地道)：</h5>
+                                <div class="food-items">
+                                    <div class="food-item">
+                                        <i class="fas fa-shrimp"></i>
+                                        <span>老长沙家常基围虾 🦐</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <i class="fas fa-drumstick-bite"></i>
+                                        <span>老姜炒鸡 🐔</span>
+                                    </div>
+                                </div>
+                                
+                                <h5>家常双选 (市井至味)：</h5>
+                                <div class="food-items">
+                                    <div class="food-item">
+                                        <i class="fas fa-bacon"></i>
+                                        <span>老长沙小炒肉 🥩</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <i class="fas fa-seedling"></i>
+                                        <span>甜豆肉沫 🌱</span>
+                                    </div>
+                                </div>
+                                
+                                <h5>点睛之笔：</h5>
+                                <div class="food-items">
+                                    <div class="food-item">
+                                        <i class="fas fa-leaf"></i>
+                                        <span>猪油炒小菜 🥬</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <i class="fas fa-mug-hot"></i>
+                                        <span>每日例汤 🍲</span>
+                                    </div>
+                                </div>
+                                
+                                <h5>佐餐佳饮：</h5>
+                                <div class="food-items">
+                                    <div class="food-item">
+                                        <i class="fas fa-wine-glass"></i>
+                                        <span>梅子酒</span>
+                                    </div>
+                                    <div class="food-item">
+                                        <i class="fas fa-glass-cheers"></i>
+                                        <span>敬酒</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <strong>核心体验：</strong> 在轻松氛围中，品尝地道湘味，聆听创业故事，深度感受长沙人的饮食文化与奋斗精神！💪
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-bath"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>沐养·涤尘</h4>
+                            <span class="tag culture">传统体验</span>
+                        </div>
+                        <div class="activity-details">
+                            餐后移步 <strong>沅小泡</strong>，体验具有悠久历史的中华传统 <strong>"搓澡"文化</strong> 🧼。洗去上午户外活动的疲惫，在热气氤氲中感受市井生活的舒缓与惬意~ 😌
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>小憩·静思</h4>
+                            <span class="tag activity">放松</span>
+                        </div>
+                        <div class="activity-details">
+                            搓澡后适当 <strong>小憩</strong>，让身心彻底放松 💤
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-fish"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>雅集·商洽</h4>
+                            <span class="tag culture">湖湘雅趣</span>
+                        </div>
+                        <div class="activity-details">
+                            小憩醒来，进入 <strong>饮茶垂钓时光</strong> (约2-4小时) 🎣🍵。在宁静雅致的环境中，品一盏湖南黑茶或君山银针，体验 <strong>"慢生活"的湖湘韵味</strong>。垂钓闲谈间，亦可进行轻松的商业探讨，感受长沙人将生活与事业交融的智慧 🧠
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-dinner"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>晚餐·随享</h4>
+                            <span class="tag food">地道美食</span>
+                        </div>
+                        <div class="activity-details">
+                            返回 <strong>阿峰宅邸 (豪宅)</strong> 🏠，晚餐选择灵活，可点 <strong>地道长沙外卖</strong>。搭配 <strong>白酒、啤酒或敬酒</strong> 🍻，延续湖湘的餐桌欢聚！🥳
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>夜谧·舒享</h4>
+                            <span class="tag activity">身心放松</span>
+                        </div>
+                        <div class="activity-details">
+                            晚餐后前往 <strong>厘舍</strong>，享受 <strong>90分钟深度SPA</strong>。融合现代技法与传统养生理念，让身体与心灵在专业呵护下得到彻底放松与升华 ✨，为精彩的一天画上完美句号 🌙
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="day-card">
+            <div class="day-header">
+                <i class="fas fa-cloud-sun"></i>
+                <h3>Day 3：悠然告别·回味星城 ☀️👋</h3>
+            </div>
+            <div class="day-content">
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-bed"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>自在苏醒</h4>
+                        </div>
+                        <div class="activity-details">
+                            在长沙的晨光中 <strong>自然醒</strong>，享受旅程尾声的慵懒时光 🛏️
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-bread-slice"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>随性早餐/早午餐</h4>
+                            <span class="tag food">地道美食</span>
+                        </div>
+                        <div class="activity-details">
+                            根据个人喜好，灵活安排一顿 <strong>"随便吃"</strong> 的早餐或早午餐。可再次回味长沙米粉 🍜，或尝试其他本地小吃 🥟🫔
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity">
+                    <div class="time-icon">
+                        <i class="fas fa-suitcase"></i>
+                    </div>
+                    <div class="activity-content">
+                        <div class="activity-title">
+                            <h4>灵活午餐 & 告别</h4>
+                        </div>
+                        <div class="activity-details">
+                            午餐同样随性安排 <strong>("不知道" 恰恰体现了随心所欲的自由感 🕊️)</strong>。可根据返程时间，在市区再寻一处心仪小馆，或打包一份特色美食在路上回味 🚆。带着满满的 <strong>湖湘记忆与文化体验</strong> 📚❤️，踏上归途 🛫
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="container">
+            <p>© 2023 阿戈探花长沙行 | 沉浸湖湘烟火，溯源星城文脉</p>
+            <p>设计灵感来自长沙文化元素 | 行程策划：阿峰·阿雍</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加下载功能
+        document.getElementById('downloadBtn').addEventListener('click', function() {
+            // 创建Blob对象
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], {type: 'text/html'});
+            
+            // 创建下载链接
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = '阿戈探花长沙行.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+        
+        // 添加分享功能
+        if (navigator.share) {
+            const shareBtn = document.createElement('button');
+            shareBtn.className = 'btn';
+            shareBtn.textContent = '分享此页面';
+            shareBtn.style.margin = '20px auto';
+            shareBtn.style.display = 'block';
+            
+            shareBtn.addEventListener('click', async () => {
+                try {
+                    await navigator.share({
+                        title: '阿戈探花长沙行',
+                        text: '沉浸湖湘烟火，溯源星城文脉 - 三日文化漫游',
+                        url: window.location.href
+                    });
+                } catch (err) {
+                    console.log('分享失败:', err);
+                }
+            });
+            
+            document.querySelector('.sharing-options').appendChild(shareBtn);
+        }
+    </script>
+</body>
+</html>
